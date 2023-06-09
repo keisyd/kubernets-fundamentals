@@ -25,7 +25,7 @@ spec:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-user
-            - name: PASSWORD
+            - name: USER_PWD
               valueFrom:
                 secretKeyRef:
                   name: mongo-secret
@@ -41,7 +41,7 @@ kind: Service
 metadata:
   name: webapp-service
 spec:
-  type: NodePort #ClusterIP default
+  type: NodePort
   selector:
     app: webapp
   ports:

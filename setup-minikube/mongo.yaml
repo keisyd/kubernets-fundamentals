@@ -30,7 +30,6 @@ spec:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-password
-
 ---
 apiVersion: v1
 kind: Service
@@ -38,8 +37,8 @@ metadata:
   name: mongo-service
 spec:
   selector:
-    app: mongop
+    app: mongo
   ports:
     - protocol: TCP
-      port: 80
+      port: 27017
       targetPort: 27017
