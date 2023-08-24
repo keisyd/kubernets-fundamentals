@@ -25,7 +25,7 @@ yamlApplicationConfig:
   kafka:
     clusters:
       - name: yaml
-        bootstrapServers: kafka:9092
+        bootstrapServers: localhost:9092
   spring:
     security:
       oauth2:
