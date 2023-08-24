@@ -22,20 +22,19 @@ serviceAccount:
 
 existingConfigMap: ""
 yamlApplicationConfig:
-  {}
-  # kafka:
-  #   clusters:
-  #     - name: yaml
-  #       bootstrapServers: kafka-service:9092
-  # spring:
-  #   security:
-  #     oauth2:
-  # auth:
-  #   type: disabled
-  # management:
-  #   health:
-  #     ldap:
-  #       enabled: false
+  kafka:
+    clusters:
+      - name: yaml
+        bootstrapServers: kafka:9092
+  spring:
+    security:
+      oauth2:
+  auth:
+    type: disabled
+  management:
+    health:
+      ldap:
+        enabled: false
 yamlApplicationConfigConfigMap:
   {}
   # keyName: config.yml
@@ -114,7 +113,7 @@ ingress:
   path: "/"
 
   # The path type for the Ingress
-  pathType: "Prefix"  
+  pathType: "Prefix"
 
   # The hostname for the Ingress
   host: ""
