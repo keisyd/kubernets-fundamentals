@@ -1,11 +1,10 @@
 # Overview
 
-Hello folks. Let's talk about this amazing
-The amaziness of Kubernetes starts with the fact that it holds several years of experience from Google Temmantes and the Open Source community since 2014, altoghether to create this platform for managing containerized workloads and services.
+Hello folks. Let's talk about the amaziness of Kubernetes starts with the fact that it holds several years of experience from Google Temmantes and the Open Source community since 2014, altoghether to create this platform for managing containerized workloads and services.
 
 With the rize of cloud native alongside with the popularity of containerized solutions and micro-service based applications, the tech community strived for a concise, extensible and powerfull solution for managing so many services.
 
-For those who are infamiliar with containers, let's take a closer look.
+For those who are unfamiliar with containers, let's take a closer look.
 
 Remmeber, back in the time when computers were single purposed and after that we got to OS's to give it more power? As long as we didn't need the all in one machine to scale rapidly it was the best we could have for future prof infrastructure.
 
@@ -17,17 +16,17 @@ That's when ships transportation system for managing loads comes as an inspirati
 
 ## Leasons from containers
 
-An efficient ship transportation ship that is the combination of bringing the load, loading the ship, transporting and unloading it in a different location, wouldn't stand or scale in size properly if you had varied shape loads and cargo. That's why they choge the most space efficiente 3 dimentional shape to define the boundries of each cargo so the ship loaders would never worry about what's inside, and a macanism of loading ships of any size would be possible by stacking containers.
+An efficient ship transportation system that is the combination of bringing the load, loading the ship, transporting and unloading it in a different location, wouldn't stand or scale in size properly if you had varied shape loads and cargo. That's why they choose the most space efficiente 3 dimentional shape to define the boundries of each cargo so the ship loaders would never worry about what's inside, and a macanism of loading ships of any size would be possible by stacking containers.
 
-In kubernetes, a really important aspect of it's archtectural solution is it's isolation, where you only work with the kubernetes inrterfaces. what this solution brings to us is a comprehensive and extensible way to provite
+In kubernetes, a really important aspect of it's archtectural solution is it's isolation, where you only work with the kubernetes interfaces. What this solution brings to us is a comprehensive and extensible way to provite
 
-- High acailabity or no downtime
+- High availability or no downtime
 - Scalability or high performance
   and Disaster recovery ( backup and restore)
 
 # Architecture
 
-For node we should think about a computer or VM
+For node we should think as a computer or a VM.
 
 There's the **master** node (primary "node agent") and connected to it there're the **worker nodes** each one with a kubelet process running on it, which is a client that enable connectivity between the nodes on the clusters and the master node among other things.
 
