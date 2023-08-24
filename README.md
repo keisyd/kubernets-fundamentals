@@ -6,11 +6,11 @@ In this respostory we're discussing the overall Kubernetes archtectures along wi
 
 # Folders
 
-## archtecture
+## [archtecture](https://github.com/keisyd/kubernets-fundamentals/tree/main/archtecture)
 
 In the archtecture folder some of the principles and fundamentals are explained about the kubernetes archtecture.
 
-## setup-minikube
+## [setup-minikube](https://github.com/keisyd/kubernets-fundamentals/tree/main/setup-minikube)
 
 Here we have both a basic setup for the application on `basic` using only the console and kubectl cli.
 
@@ -75,7 +75,7 @@ It can do this in some ways:
   - Here we just tell the kernel “hey, when some of the pods connects to this IP address use a Destination Network Address Translation to one of these Pods”. Also it does random selection of the pods hence it’s Load Balancing capabilities. Even when a Pod gets evicted, the load is automatically re-distributed. In anyway, from a client perspective, it’s important to understand the ephemeral nature of those connections: if anything goes wrong, reconnect!
 - IPVS
   - One possible evolution from IPTables is this new kernel mechanism called Ip virtual Services that uses less resources and makes it’s sometimes significantly faster than IP Tables
-- You can tell kube-proxy which one to use and the ******\*\*******default******\*\******* is IPTables
+- You can tell kube-proxy which one to use and the **\*\***\*\***\*\***default**\*\***\*\***\*\*** is IPTables
 
 There also CNI plugins with some fancy features. Some of the plugins allow you to replace kube-proxy.
 
@@ -104,7 +104,7 @@ spec:
 		app: web
 ```
 
-Services are a resource Kind, in the ****\*\*\*\*****Core****\*\*\*\***** group at maturity \***\*v1\*\***. Like all resources they require a name in the metadata. So, if the pod matches the selector it get’s the connection from a client that connects to the service virtual ip.
+Services are a resource Kind, in the \***\*\*\*\*\*\*\***Core\***\*\*\*\*\*\*\*** group at maturity \***\*v1\*\***. Like all resources they require a name in the metadata. So, if the pod matches the selector it get’s the connection from a client that connects to the service virtual ip.
 
 The way it happens is that the Service Controller watches an incoming pod and creates an EndPoint resource that is watched by the kube-proxy to redirect the requests.
 
