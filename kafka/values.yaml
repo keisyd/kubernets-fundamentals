@@ -704,7 +704,7 @@ controller:
   persistence:
     ## @param controller.persistence.enabled Enable Kafka data persistence using PVC, note that ZooKeeper persistence is unaffected
     ##
-    enabled: true
+    enabled: false
     ## @param controller.persistence.existingClaim A manually managed Persistent Volume and Claim
     ## If defined, PVC must be created manually before volume will be bound
     ## The value is evaluated as a template
@@ -1146,7 +1146,6 @@ broker:
     ## @param broker.logPersistence.mountPath Mount path of the Kafka logs volume
     ##
     mountPath: /opt/bitnami/kafka/logs
-
 
 ## @section Traffic Exposure parameters
 ##
