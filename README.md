@@ -14,7 +14,7 @@ The installation can be done with
 
 I recommend using [Lens](https://k8slens.dev/) and portfowarding the service to your localhost. Enable this traffic on your anti-virus.
 
-Then enter the UI with the outputed password from the following command.
+Then enter the UI with the outputed password dfrom the following command.
 
 > kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 
