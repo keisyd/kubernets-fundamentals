@@ -34,11 +34,13 @@ To simplify, set in values.yaml 'persistence: false' to it runs gracefully. So a
 
 ![image](https://github.com/keisyd/kubernets-fundamentals/assets/57769796/a6efb80a-da10-4295-b067-1ee02226a523)
 
-Do some tests to see if it's working
+## Install Kafka UI
 
-> kubectl –namespace default exec -it kafka-0 – kafka-topics.sh –create –zookeeper kafka-zookeeper:2181 –replication-factor 1 –partitions 1 –topic test
+So, to see things better, we install [kafka UI](https://docs.kafka-ui.provectus.io/configuration/helm-charts/quick-start)
 
-> kubectl –namespace default exec -it kafka-0 – kafka-topics.sh –list –zookeeper kafka-zookeeper:2181
+![image](https://github.com/keisyd/kubernets-fundamentals/assets/57769796/0c3af69d-ef4f-49f3-b343-d8a0aee0259f)
+
+Once up and running we may point to the runnig kafka cluster.
 
 # Folders
 
