@@ -20,15 +20,15 @@ Also we have the explanation on how to setup argocd to use GitOps
 
 Kubernetes organizes itself in a particular way to make container deployment possible, scalable, predictable, declarative and, generally, customizable.
 
-There’s no such thing as a container for Kubernetes, so it abstracts way any container implementation using a structured and reliable interface called CRI or Container runtime interface. In fact, that’s one of the three key pillars and plugins for Kubernetes core functionality to make it work as intended.
+There’s no such thing as a container for Kubernetes, so it abstracts away any container implementation using a structured and reliable interface called CRI or Container runtime interface. In fact, that’s one of the three key pillars and plugins for Kubernetes core functionality to make it work as intended.
 
 Also, in order the compute, launch and have control over container deployment, Kubernetes provides the smallest active entity it controls which is the Pod.
 
 A Pod contains from one to several containers mostly single purposed and is basically the Kubernetes unit of control. They are created inside a running machine that’s is called Node which is responsible for providing the computational power for the pods to operate.
 
-Kubernetes works in a declarative way, so we never create Pods directly - even though possible, because we want it to be automated. The way this automation works is that we tell to Kubernetes the desired state of the cluster via one of the Workload documents, such as the Deployment, so Kubernetes tries it’s best to achieve the desired state.
+Kubernetes works in a declarative way, so we never create Pods directly - even though possible, because we want it to be automated. The way this automation works is that we tell to Kubernetes the desired state of the cluster via one of the Manifest documents, such as the Deployment, so Kubernetes tries it’s best to achieve the desired state.
 
-So instead of saying where each Pod goes or in what nodes, we say we want a given number of replicas - that is later translated to Replica Sets, for example, an the Kubernetes fights against the Pods ephemeral nature each time a Pod Fails to keep the specified state.
+So instead of saying where each Pod goes or in what nodes, we say we want a given number of replicas - that is later translated to Replica Sets, for example, an the Kubernetes flights against the Pods ephemeral nature each time a Pod Fails to keep the specified state.
 
 Here we got to another important factor: Kubernetes is initially designed for ephemeral and stateless services that can potentially fail without compromising the cluster health if more of them can be provided on time.
 
@@ -95,16 +95,16 @@ The way it works is that we declare a state and Kubernetes tries to make the sta
 apiVersion: v1
 kind: Service
 metadata:
-	name: web
+  name: web
 spec:
-	ports:
-	- port: 80
-		name: http
-	selector:
-		app: web
+  ports:
+  - port: 80
+      name: http
+  selector:
+      app: web
 ```
 
-Services are a resource Kind, in the \***\*\*\*\*\*\*\***Core\***\*\*\*\*\*\*\*** group at maturity \***\*v1\*\***. Like all resources they require a name in the metadata. So, if the pod matches the selector it get’s the connection from a client that connects to the service virtual ip.
+Services are a resource Kind, in the **Core** group at maturity **v1**. Like all resources they require a name in the metadata. So, if the pod matches the selector it get’s the connection from a client that connects to the service virtual ip.
 
 The way it happens is that the Service Controller watches an incoming pod and creates an EndPoint resource that is watched by the kube-proxy to redirect the requests.
 
