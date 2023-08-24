@@ -37,6 +37,7 @@ To simplify, set in values.yaml 'persistence: false' to it runs gracefully. So a
 Do some tests to see if it's working
 
 > kubectl –namespace default exec -it kafka-0 – kafka-topics.sh –create –zookeeper kafka-zookeeper:2181 –replication-factor 1 –partitions 1 –topic test
+
 > kubectl –namespace default exec -it kafka-0 – kafka-topics.sh –list –zookeeper kafka-zookeeper:2181
 
 # Folders
