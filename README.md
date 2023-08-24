@@ -30,7 +30,9 @@ Download the bitnami helm chart and paste it on the folder for the ArgoCd app.
 
 > https://github.com/bitnami/charts/tree/master/bitnami/kafka
 
-To simplify, set in values.yaml 'persistence: false' to it runs gracefully.
+To simplify, set in values.yaml 'persistence: false' to it runs gracefully. So argocd will get it up and running:
+
+![image](https://github.com/keisyd/kubernets-fundamentals/assets/57769796/a6efb80a-da10-4295-b067-1ee02226a523)
 
 Do some tests to see if it's working
 
